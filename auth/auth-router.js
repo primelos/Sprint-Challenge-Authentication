@@ -1,11 +1,26 @@
 const router = require('express').Router();
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+
+const Joke = require('../auth/auth_joke_model')
+
+
 
 router.post('/register', (req, res) => {
   // implement registration
+  let joke = req.body
+  const hash = bcrypt.hashSync(use.password, 12)
+  use.password = hash
+
+
+
 });
 
 router.post('/login', (req, res) => {
   // implement login
+  const { username, password } = req.body
+
+
 });
 
 function createToken(user) {
